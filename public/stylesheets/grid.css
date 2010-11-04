@@ -60,4 +60,7 @@ body.ie .thirteen .column-row	{ width: 780px; }
 body.ie .fourteen .column-row	{ width: 840px; }
 body.ie .fifteen .column-row	{ width: 900px; }
 body.ie .two-thirds .column-row { width: 500px; }
+.starred{
+	background-color: yellow;
+}
 

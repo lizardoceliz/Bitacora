@@ -17,5 +17,11 @@ class LogEntriesController < ApplicationController
     @log_entry = current_user.log_entries.find(params[:id])
     @log_entry.complete!
   end
+  
+  def starred
+    @log_entry = current_user.log_entries.find(params[:id])
+    @log_entry.starred!
+    @log_entries = current_user.log_entries.most_recent.pending
+  end
 end
 

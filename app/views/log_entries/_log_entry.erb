@@ -1,5 +1,5 @@
 <% unless log_entry.new_record? -%>
-  <li id="item-<%= log_entry.id %>" class="item row">
+  <li id="item-<%= log_entry.id %>" class="<%= log_entry.starred? ? "item row starred" : "item row" %>">
     <div class="three columns">
       <%= log_entry.created_at.strftime("%B %d, %Y") %>
     </div>
@@ -8,7 +8,10 @@
     </div>
     <div class="four columns">
       <%= link_to 'Complete', [:complete, log_entry], :method => :put,
-            :confirm => "Are you sure?", :remote => true %>
+            :confirm => "Are you sure?", :remote => true %>	
+	<% if !log_entry.starred -%>
+	  <%= link_to 'Starred', [:starred, log_entry], :method => :put, :remote => true %>
+	<% end -%>
       <span class="divider"> | </span>
        <%= link_to 'Remove', log_entry, :method => :delete,
              :confirm => "Are you sure?", :remote => true %>

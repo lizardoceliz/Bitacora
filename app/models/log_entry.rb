@@ -10,5 +10,10 @@ class LogEntry < ActiveRecord::Base
     self.completed = true
     save!
   end
+  
+  def starred!
+    self.starred = true
+    save!
+  end
 end
 

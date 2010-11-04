@@ -4,6 +4,7 @@ Bitacora::Application.routes.draw do
   resources :log_entries do
     member do
       put :complete
+      put :starred
     end
   end
 
